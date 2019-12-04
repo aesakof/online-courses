@@ -1,0 +1,36 @@
+h2{
+  font-family: 'Lobster', cursive;
+  text-align: center;
+}
+
+table{
+  align-self: center;
+  margin: auto;
+}
+
+td{
+  width: 100px;
+  height: 300px;
+  padding: 50px;
+  border: 6px solid white;
+}
+
+#one{
+  background-color: #DB4444;
+}
+
+#two{
+  background-color: #EAFF30;
+}
+
+#three{
+  background-color: #54EA5A;
+}
+
+#four{
+  background-color: #5075E2;
+}
+
+#five{
+  background-color: #E250E2;
+}
