@@ -17,7 +17,7 @@ class PostListView(ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__lte=timezone.now).order_by('-published_date')
+        return Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
 
 class PostDetailView(DetailView):
     model = Post
@@ -44,7 +44,7 @@ class DraftListView(LoginRequiredMixin,ListView):
     model = Post
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__isnull=True).order_by('create_date')
+        return Post.objects.filter(published_date__isnull=True).order_by('created_date')
 
 
 ####################################
@@ -53,7 +53,7 @@ class DraftListView(LoginRequiredMixin,ListView):
 @login_required
 def post_publish(request,pk):
     post = get_object_or_404(Post,pk=pk)
-    post.publish
+    post.publish()
     return redirect('post_detail',pk=pk)
 
 @login_required
