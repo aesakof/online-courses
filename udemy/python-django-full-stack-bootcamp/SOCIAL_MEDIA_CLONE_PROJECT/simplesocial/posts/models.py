@@ -12,7 +12,7 @@ User = get_user_model()
 # Create your models here.
 
 class Post(models.Model):
-    user = models.ForeignKey(user,related_name='posts',on_delete='CASCADE')
+    user = models.ForeignKey(User,related_name='posts',on_delete='CASCADE')
     created_at = models.DateTimeField(auto_now=True)
     message = models.TextField()
     message_html = models.TextField(editable=False)
